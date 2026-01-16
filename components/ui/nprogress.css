@@ -1,0 +1,20 @@
+/* Make the bar retro yellow/gold */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #FFD700; /* Retro Gold */
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* Chunky bar */
+  box-shadow: 0 2px 0 0 #FFFFFF; /* Hard shadow */
+}
+
+/* Fancy blur effect removal for retro style */
+#nprogress .peg {
+  display: none;
+}

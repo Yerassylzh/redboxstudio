@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #0F0F0F;
+  --color-foreground: #FFFFFF;
+  
+  --color-primary: #FFD700;
+  --color-primary-foreground: #000000;
+  
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-muted: #1a1a1a;
+  --color-muted-foreground: #9CA3AF;
+  
+  --color-card: #0F0F0F;
+  --color-card-foreground: #FFFFFF;
+
+  --color-border: #FFFFFF;
+  
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-press-start);
+  
+  --shadow-retro: 3px 3px 0 0 #FFFFFF;
+  --shadow-retro-sm: 1px 1px 0 0 #FFFFFF;
+  --shadow-retro-lg: 6px 6px 0 0 #333333;
+}
+
+/* Ensure variables resolve even if @theme acts weirdly on root */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-heading: var(--font-press-start, 'Courier New', monospace);
+  --font-sans: var(--font-inter, sans-serif);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base resets */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px; /* Explicit base size */
+  line-height: 1.6;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: none;
+  font-smooth: never;
+  font-synthesis: none; /* Prevents browser from fake-bolding pixel fonts */
+  text-rendering: optimizeSpeed; /* Often better for pixel fonts */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), cursive;
+  text-transform: uppercase;
+  letter-spacing: -0.05em; /* Tighter tracking for retro feel */
+  line-height: 1.2; 
+  font-weight: 400; /* Ensure we don't trigger bold synthesis */
+}
+
+.image-pixelated {
+  image-rendering: pixelated;
 }

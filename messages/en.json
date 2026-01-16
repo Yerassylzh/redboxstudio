@@ -1,0 +1,146 @@
+{
+  "Hero": {
+    "newRelease": "New Release",
+    "titlePrefix": "We Craft",
+    "titleHighlight": "Digital Worlds",
+    "description": "RedBoxStudio is a collective of passionate developers and artists creating immersive experiences. We build worlds you'll want to get lost in.",
+    "playBtn": "Play Our Games",
+    "aboutBtn": "About Studio"
+  },
+  "Home": {
+    "recentReleases": "Recent Releases",
+    "viewAll": "View All",
+    "details": "Details"
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "q1": "Where can I play your games?",
+    "a1": "Our games are available on Google Play (Android) and Yandex Games (Web). You can find direct links on each game's detail page.",
+    "q2": "Are your games free?",
+    "a2": "Yes! Most of our games are free-to-play with optional ads or in-app purchases to support development.",
+    "q3": "How can I support RedBoxStudio?",
+    "a3": "Playing our games, rating them on the store, and subscribing to our YouTube channel is the best way to support us!"
+  },
+  "Footer": {
+    "rights": "All rights reserved.",
+    "designed": "Designed with 🎮 in 2026.",
+    "description": "Creating immersive mobile and web experiences."
+  },
+  "Navigation": {
+    "home": "Home",
+    "games": "Games",
+    "about": "About Studio",
+    "playGames": "Play",
+    "android": "Android",
+    "web": "Web (Yandex)",
+    "youtube": "YouTube",
+    "tiktok": "TikTok"
+  },
+  "Categories": {
+    "Action": "Action",
+    "Action RPG": "Action RPG",
+    "Adventure": "Adventure",
+    "Arcade": "Arcade",
+    "Battle Royale": "Battle Royale",
+    "Casual": "Casual",
+    "Card Game": "Card Game",
+    "Fighting": "Fighting",
+    "Horror": "Horror",
+    "Idle": "Idle",
+    "Metroidvania": "Metroidvania",
+    "MOBA": "MOBA",
+    "Music/Rhythm": "Music/Rhythm",
+    "Open World": "Open World",
+    "Platformer": "Platformer",
+    "Puzzle": "Puzzle",
+    "Racing": "Racing",
+    "Roguelike": "Roguelike",
+    "RPG": "RPG",
+    "Sandbox": "Sandbox",
+    "Shooter": "Shooter",
+    "Simulation": "Simulation",
+    "Sports": "Sports",
+    "Stealth": "Stealth",
+    "Strategy": "Strategy",
+    "Survival": "Survival",
+    "Tower Defense": "Tower Defense",
+    "Trivia": "Trivia",
+    "Visual Novel": "Visual Novel"
+  },
+  "GameHero": {
+    "released": "Released"
+  },
+  "GameGallery": {
+    "title": "Screenshots"
+  },
+  "Games": {
+    "pixel-vanguard": {
+      "description": "Dive into a cyber-enhanced pixel art world where ancient magic meets future tech. Battle through procedurally generated dungeons, upgrade your cybernetic enhancements, and uncover the secrets of the Vanguard.",
+      "features": {
+        "0": "Procedurally generated cyberpunk dungeons",
+        "1": "Deep cybernetic upgrade system",
+        "2": "Fast-paced hack-and-slash combat",
+        "3": "Epic boss battles"
+      },
+      "privacy": "We collect minimal data to improve gameplay. No personal identifiers are stored without consent."
+    },
+    "neon-drift": {
+      "description": "High-octane synthwave racing through endless procedural cityscapes. Master the drift mechanics, customize your retro ride, and compete on global leaderboards.",
+      "features": {
+        "0": "Endless procedural tracks",
+        "1": "Synthwave soundtrack",
+        "2": "Global leaderboards"
+      },
+      "privacy": "Leaderboard data is public. Device IDs are used for account recovery."
+    },
+    "cosmic-miner": {
+      "description": "Build and manage your mining colony on a hostile alien planet. Defend against local fauna, optimize extraction routes, and terraform the surface.",
+      "features": {
+        "0": "Base building and management",
+        "1": "Tower defense elements",
+        "2": "Resource optimization puzzles"
+      },
+      "privacy": "Offline capable. Cloud save requires login."
+    },
+     "future-prototype": {
+      "description": "An experimental simulation game pushing the boundaries of what's possible in web browsers. More details coming soon.",
+      "features": {},
+      "privacy": "Experimental build. No data collected."
+    }
+  },
+  "GamePage": {
+    "play": "Play",
+    "download": "Download",
+    "playOnWeb": "Play Web",
+    "googlePlay": "Google Play",
+    "releaseDate": "Release Date",
+    "genre": "Genre",
+    "version": "Version",
+    "features": "Key Features",
+    "privacy": "Privacy & Safety",
+    "back": "Back to Games",
+    "trailer": "Official Trailer",
+    "comingSoon": "Coming Soon",
+    "aboutGame": "About The Game"
+  },
+  "GamesList": {
+    "titlePrefix": "Our",
+    "title": "Games",
+    "subtitle": "Explore our growing collection of mobile and web experiences.",
+    "filterAll": "All",
+    "filterWeb": "Web",
+    "filterAndroid": "Android",
+    "empty": "No games found for this platform yet."
+  },
+  "About": {
+    "title": "About Us",
+    "description": "RedBoxStudio creates immersive games for mobile and web.",
+    "titlePrefix": "We Are",
+    "titleSuffix": "RedBoxStudio",
+    "heroText": "A collective of passionate developers and artists obsessed with quality and gameplay depth.",
+    "missionTitle": "Our Mission",
+    "missionText1": "Founded in 2025, we started with a simple belief: mobile games shouldn't feel disposable. We craft experiences that respect the player's intelligence and time.",
+    "missionText2": "From procedural dungeons to complex simulations, we build worlds that matter.",
+    "connectTitle": "Connect With Us"
+  }
+}
