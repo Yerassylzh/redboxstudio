@@ -2,6 +2,7 @@ import { Inter, Press_Start_2P } from "next/font/google"; // Using Press Start 2
 import "@/app/globals.css";
 import { cn } from "@/lib/utils";
 import { RouteChangeIndicator } from "@/components/ui/RouteChangeIndicator";
+import { Suspense } from "react";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,7 +28,9 @@ export default function AdminLayout({
   return (
     <html lang="en" className={cn(inter.variable, pressStart.variable)}>
       <body className="antialiased min-h-screen bg-black text-white overflow-x-hidden selection:bg-primary selection:text-primary-foreground flex flex-col font-mono">
-          <RouteChangeIndicator />
+          <Suspense fallback={null}>
+             <RouteChangeIndicator />
+          </Suspense>
           <main className="flex-1">
             {children}
           </main>
