@@ -66,21 +66,21 @@ export default async function GamePage(props: GamePageProps) {
           
             {/* Description */}
             <div className="prose prose-invert max-w-none">
-              <h2 className="text-2xl font-heading text-white border-b border-white/10 pb-4 mb-6">{tPage('aboutGame')}</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed font-sans whitespace-pre-wrap">
+              <h2 className="text-base md:text-2xl font-heading text-white border-b border-white/10 pb-4 mb-4 md:mb-6">{tPage('aboutGame')}</h2>
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed font-sans whitespace-pre-wrap">
                 {game.description}
               </p>
             </div>
 
             {/* Trailer (Placeholder) */}
             <div>
-               <h2 className="text-xl font-heading text-white mb-6 flex items-center gap-2">
-                <PlayCircle className="size-5 text-primary" /> {tPage('trailer')}
+               <h2 className="text-base md:text-xl font-heading text-white mb-3 md:mb-6 flex items-center gap-2">
+                <PlayCircle className="size-4 md:size-5 text-primary" /> {tPage('trailer')}
               </h2>
               {game.trailer ? (
                  <YouTubeEmbed url={game.trailer} />
               ) : (
-                 <div className="aspect-video bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground font-mono text-xs">
+                 <div className="aspect-video bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground font-mono text-[10px] md:text-xs">
                     NO TRAILER AVAILABLE
                  </div>
               )}
@@ -88,14 +88,14 @@ export default async function GamePage(props: GamePageProps) {
 
             {/* Key Features */}
              <div>
-               <h2 className="text-xl font-heading text-white mb-6 flex items-center gap-2">
-                <ShieldCheck className="size-5 text-primary" /> {tPage('features')}
+               <h2 className="text-base md:text-xl font-heading text-white mb-3 md:mb-6 flex items-center gap-2">
+                <ShieldCheck className="size-4 md:size-5 text-primary" /> {tPage('features')}
               </h2>
-              <ul className="grid sm:grid-cols-2 gap-4">
+              <ul className="grid sm:grid-cols-2 gap-3 md:gap-4">
                 {features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3 p-4 bg-white/5 border border-white/10 rounded-sm">
-                    <span className="size-1.5 bg-primary mt-2 shrink-0" />
-                    <span className="text-sm text-gray-300">{feature}</span>
+                  <li key={idx} className="flex items-start gap-2 md:gap-3 p-3 md:p-4 bg-white/5 border border-white/10 rounded-sm">
+                    <span className="size-1 md:size-1.5 bg-primary mt-1.5 md:mt-2 shrink-0" />
+                    <span className="text-[10px] md:text-sm text-gray-300">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -103,10 +103,10 @@ export default async function GamePage(props: GamePageProps) {
           </div>
           
           {/* Sidebar - Actions & Info */}
-          <div className="space-y-8">
-            <div className="p-6 bg-white/5 border border-white/10 shadow-retro-sm">
-              <h3 className="text-xl font-heading text-white mb-6 flex items-center gap-2">
-                <Download className="size-5 text-primary" /> {tPage('play')}
+          <div className="space-y-6 md:space-y-8">
+            <div className="p-4 md:p-6 bg-white/5 border border-white/10 shadow-retro-sm">
+              <h3 className="text-base md:text-xl font-heading text-white mb-4 md:mb-6 flex items-center gap-2">
+                <Download className="size-4 md:size-5 text-primary" /> {tPage('play')}
               </h3>
               
                 <GameActions 

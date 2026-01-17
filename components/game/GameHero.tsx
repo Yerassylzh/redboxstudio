@@ -28,14 +28,14 @@ export async function GameHero({ game }: GameHeroProps) {
       </div>
 
       <Container className="relative z-10 w-full">
-        <div className="flex flex-col md:flex-row items-end justify-between gap-6">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
           <div className="space-y-4 max-w-2xl">
             <div className="inline-flex items-center gap-2 border border-primary/50 bg-black/50 backdrop-blur-md px-3 py-1 text-xs font-heading text-primary uppercase tracking-widest shadow-retro-sm">
               <span className="size-2 bg-primary animate-pulse" />
               {tCats(game.category)}
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading text-white drop-shadow-md text-balance">
+            <h1 className="text-2xl md:text-6xl lg:text-7xl font-heading text-white drop-shadow-md text-balance">
               {game.title}
             </h1>
             

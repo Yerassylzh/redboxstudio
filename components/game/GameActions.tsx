@@ -38,12 +38,12 @@ export function GameActions({ slug, platforms, labels, locale }: GameActionsProp
             {platforms.android && (
                 <Button 
                     variant="default" 
-                    className="w-full justify-start gap-3 h-12 md:h-14 text-sm md:text-base" 
+                    className="w-full justify-start gap-3 h-9 md:h-14 text-[10px] md:text-base" 
                     asChild
                     onClick={() => handleTrackAndNav('click_android')}
                 >
                     <Link href={platforms.android} target="_blank">
-                        <Smartphone className="size-5 shrink-0" /> {labels.googlePlay}
+                        <Smartphone className="size-4 md:size-5 shrink-0" /> {labels.googlePlay}
                     </Link>
                 </Button>
             )}
@@ -51,12 +51,12 @@ export function GameActions({ slug, platforms, labels, locale }: GameActionsProp
             {platforms.web && (
                 <Button 
                     variant="outline" 
-                    className="w-full justify-start gap-3 h-12 md:h-14 text-sm md:text-base border-white/20 hover:border-white" 
+                    className="w-full justify-start gap-3 h-9 md:h-14 text-[10px] md:text-base border-white/20 hover:border-white" 
                     asChild
                     onClick={() => handleTrackAndNav('click_web')}
                 >
                     <Link href={platforms.web} target="_blank">
-                        <Monitor className="size-5 shrink-0" /> {labels.playOnWeb}
+                        <Monitor className="size-4 md:size-5 shrink-0" /> {labels.playOnWeb}
                     </Link>
                 </Button>
             )}

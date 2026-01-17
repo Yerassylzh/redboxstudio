@@ -36,8 +36,8 @@ export function GameCard({ title, category, image, slug }: GameCardProps) {
         {/* Content */}
         <div className="p-5 flex-1 flex items-center justify-between gap-4">
           <div className="space-y-1">
-            <h3 className="font-heading text-base text-white group-hover:text-primary transition-colors leading-tight">{title}</h3>
-            <div className="inline-block px-2 py-1 bg-white/10 text-[10px] text-white uppercase tracking-widest font-heading border border-white/20">
+            <h3 className="font-heading text-sm text-white group-hover:text-primary transition-colors leading-tight">{title}</h3>
+            <div className="inline-block px-2 py-1 bg-white/10 text-[8px] text-white uppercase tracking-widest font-heading border border-white/20">
               {tCats(category)}
             </div>
           </div>

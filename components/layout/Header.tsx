@@ -34,7 +34,7 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
-          <Button variant="premium" size="sm" asChild>
+          <Button variant="premium" size="sm" asChild className="hidden md:inline-flex">
              <Link href="/games">{t('playGames')}</Link>
           </Button>
         </div>

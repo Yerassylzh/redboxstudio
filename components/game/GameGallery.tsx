@@ -13,7 +13,7 @@ export async function GameGallery({ images }: GameGalleryProps) {
   return (
     <section className="py-16 bg-white/5 border-t border-white/10">
       <Container>
-        <h2 className="text-2xl md:text-3xl font-heading text-white mb-8 border-l-4 border-primary pl-4">
+        <h2 className="text-lg md:text-2xl font-heading text-white mb-6 md:mb-8 border-l-4 border-primary pl-4">
           {t('title')}
         </h2>
         
