@@ -8,9 +8,10 @@
 ## 2. Page Structure
 
 ### Home Page (`/`)
-*   **Hero**: Dynamic "New Release" teaser.
-*   **Recent Releases**: Fetches top 3 newest games from DB.
-*   **FAQ Section**: Accordion layout with localized Q&A.
+### Home Page (`/`)
+*   **Hero**: Dynamic "New Release" teaser with staged entrance animations.
+*   **Recent Releases**: Fetches top 3 newest games from DB (Scroll-triggered reveal).
+*   **FAQ Section**: Accordion layout with localized Q&A (Scroll-triggered reveal).
 *   **Footer**: Links to Games, About, YouTube, TikTok.
 
 ### Games Catalogue (`/games`)
@@ -36,7 +37,14 @@
 *   **Visuals**: "Starfield" grid background.
 *   **Contacts**: MailTO, YouTube (New Tab), TikTok (New Tab).
 
-## 3. SEO Strategy
+## 3. Animations & Interactivity
+*   **Library**: `framer-motion`.
+*   **Strategy**: Client-side entrance animations.
+*   **Components**:
+    *   **Hero**: Staggered entrance for title, badge, and buttons (`Hero.tsx`).
+    *   **Scroll Reveal**: `AnimateInView` wrapper reveals content (Recent Releases, FAQ) as it enters the viewport.
+
+## 4. SEO Strategy
 *   **Metadata**: `generateMetadata` function used on all dynamic pages.
 *   **Sitemap**: Should be generated dynamically (Future Todo).
 *   **Performance**: Images use `next/image` optimizations; Scripts loaded lazily.

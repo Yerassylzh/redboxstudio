@@ -35,7 +35,7 @@ The project uses strict **file-system based routing** with locale prefixes.
   /admin              # Admin Forms & UI
   /layout             # Header, Footer
   /game               # GameCard, GameHero, GameGallery
-  /ui                 # Primitives (Button, Container, YouTubeEmbed)
+  /ui                 # Primitives (Button, Container, YouTubeEmbed, AnimateInView)
 /lib
   games.ts            # Data Adapter (Supabase Fetching helpers)
 /utils/supabase       # Supabase Clients (Server, Client, Middleware)
