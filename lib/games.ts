@@ -91,3 +91,8 @@ export async function getRecentGames(locale: string = 'en', limit: number = 3): 
 
     return data.map(row => mapGameData(row, locale));
 }
+
+export async function getLatestGame(locale: string = 'en'): Promise<Game | null> {
+    const games = await getRecentGames(locale, 1);
+    return games.length > 0 ? games[0] : null;
+}

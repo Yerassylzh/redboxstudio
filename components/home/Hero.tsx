@@ -4,9 +4,15 @@ import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from 'framer-motion';
+interface HeroProps {
+  latestGame: {
+      title: string;
+      slug: string;
+  } | null;
+}
 
-export function Hero() {
+export function Hero({ latestGame }: HeroProps) {
   const t = useTranslations('Hero');
 
   const containerVariants: Variants = {
@@ -45,10 +51,14 @@ export function Hero() {
             initial="hidden"
             animate="visible"
         >
-            <motion.div variants={itemVariants} className="inline-flex items-center border border-white/20 bg-black px-4 py-2 text-[10px] font-heading text-primary uppercase tracking-widest shadow-retro-sm">
-            <span className="size-2 bg-primary mr-3 animate-pulse" />
-            {t('newRelease')}: Pixel Vanguard
-            </motion.div>
+            {latestGame && (
+                <motion.div variants={itemVariants} className="inline-flex items-center border border-white/20 bg-black px-3 py-1.5 md:px-4 md:py-2 text-[8px] md:text-[10px] font-heading text-primary uppercase tracking-widest shadow-retro-sm">
+                <span className="size-1.5 md:size-2 bg-primary mr-2 md:mr-3 animate-pulse" />
+                <Link href={`/game/${latestGame.slug}`} className="hover:underline decoration-primary decoration-2 underline-offset-4 transition-all">
+                    {t('newRelease')}: {latestGame.title}
+                </Link>
+                </motion.div>
+            )}
             
             <motion.div variants={itemVariants} className="relative inline-block my-4 md:my-8 text-balance">
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-[64px] font-heading text-white max-w-6xl mx-auto leading-[1.2] md:leading-[1.1] drop-shadow-md">
