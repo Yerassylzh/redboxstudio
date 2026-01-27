@@ -115,29 +115,6 @@ export function GameForm({ game }: { game?: any }) { // Type this better ideally
         </div>
       </div>
 
-       {/* Gallery / Screenshots */}
-       <div className="p-6 bg-white/5 border border-white/10 rounded-lg space-y-6">
-        <h2 className="text-xl font-heading text-primary border-b border-white/10 pb-4">Gallery (Screenshots)</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-             <div className="space-y-2">
-                <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 1</label>
-                <input name="gallery.0" defaultValue={game?.gallery?.[0]} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
-            </div>
-            <div className="space-y-2">
-                <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 2</label>
-                <input name="gallery.1" defaultValue={game?.gallery?.[1]} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
-            </div>
-            <div className="space-y-2">
-                <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 3</label>
-                <input name="gallery.2" defaultValue={game?.gallery?.[2]} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
-            </div>
-            <div className="space-y-2">
-                <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 4</label>
-                <input name="gallery.3" defaultValue={game?.gallery?.[3]} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
-            </div>
-        </div>
-      </div>
-
       {/* Localization Tabs */}
        <div className="p-6 bg-white/5 border border-white/10 rounded-lg space-y-6">
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
@@ -158,7 +135,7 @@ export function GameForm({ game }: { game?: any }) { // Type this better ideally
                 <label className="text-xs uppercase font-mono text-muted-foreground">Privacy Policy (EN)</label>
                 <textarea rows={3} name="translations.en.privacy" defaultValue={get(game, 'translations.en.privacy')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" />
             </div>
-            {/* Features (limited to 3 for now) */}
+            {/* Features */}
             <div className="space-y-2">
                 <label className="text-xs uppercase font-mono text-muted-foreground">Feature 1 (EN)</label>
                 <input name="translations.en.features.0" defaultValue={get(game, 'translations.en.features.0')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" />
@@ -170,6 +147,30 @@ export function GameForm({ game }: { game?: any }) { // Type this better ideally
              <div className="space-y-2">
                 <label className="text-xs uppercase font-mono text-muted-foreground">Feature 3 (EN)</label>
                 <input name="translations.en.features.2" defaultValue={get(game, 'translations.en.features.2')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" />
+            </div>
+            
+            {/* Gallery/Screenshots for English */}
+            <div className="pt-4 border-t border-white/10">
+                <h3 className="text-sm font-heading text-primary mb-4 uppercase">Screenshots (EN)</h3>
+                <p className="text-xs text-muted-foreground mb-4 font-mono">Use screenshots with English UI text</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                        <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 1</label>
+                        <input name="translations.en.gallery.0" defaultValue={get(game, 'translations.en.gallery.0')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 2</label>
+                        <input name="translations.en.gallery.1" defaultValue={get(game, 'translations.en.gallery.1')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 3</label>
+                        <input name="translations.en.gallery.2" defaultValue={get(game, 'translations.en.gallery.2')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 4</label>
+                        <input name="translations.en.gallery.3" defaultValue={get(game, 'translations.en.gallery.3')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -183,7 +184,7 @@ export function GameForm({ game }: { game?: any }) { // Type this better ideally
                 <label className="text-xs uppercase font-mono text-muted-foreground">Privacy Policy (RU)</label>
                 <textarea rows={3} name="translations.ru.privacy" defaultValue={get(game, 'translations.ru.privacy')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" />
             </div>
-             {/* Features (limited to 3 for now) */}
+             {/* Features */}
             <div className="space-y-2">
                 <label className="text-xs uppercase font-mono text-muted-foreground">Feature 1 (RU)</label>
                 <input name="translations.ru.features.0" defaultValue={get(game, 'translations.ru.features.0')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" />
@@ -195,6 +196,30 @@ export function GameForm({ game }: { game?: any }) { // Type this better ideally
              <div className="space-y-2">
                 <label className="text-xs uppercase font-mono text-muted-foreground">Feature 3 (RU)</label>
                 <input name="translations.ru.features.2" defaultValue={get(game, 'translations.ru.features.2')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" />
+            </div>
+            
+            {/* Gallery/Screenshots for Russian */}
+            <div className="pt-4 border-t border-white/10">
+                <h3 className="text-sm font-heading text-primary mb-4 uppercase">Screenshots (RU)</h3>
+                <p className="text-xs text-muted-foreground mb-4 font-mono">Use screenshots with Russian UI text</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                        <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 1</label>
+                        <input name="translations.ru.gallery.0" defaultValue={get(game, 'translations.ru.gallery.0')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 2</label>
+                        <input name="translations.ru.gallery.1" defaultValue={get(game, 'translations.ru.gallery.1')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 3</label>
+                        <input name="translations.ru.gallery.2" defaultValue={get(game, 'translations.ru.gallery.2')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs uppercase font-mono text-muted-foreground">Screenshot 4</label>
+                        <input name="translations.ru.gallery.3" defaultValue={get(game, 'translations.ru.gallery.3')} className="w-full bg-black/20 border border-white/10 p-2 text-white font-mono" placeholder="https://..." />
+                    </div>
+                </div>
             </div>
         </div>
       </div>

@@ -18,8 +18,8 @@ interface GameData {
     web?: string
   }
   translations: {
-    en: { description: string; features: Record<string, string>; privacy: string }
-    ru: { description: string; features: Record<string, string>; privacy: string }
+    en: { description: string; features: Record<string, string>; privacy: string; gallery?: string[] }
+    ru: { description: string; features: Record<string, string>; privacy: string; gallery?: string[] }
   }
 }
 
@@ -46,19 +46,22 @@ export async function saveGame(prevState: any, formData: FormData) {
       return { error: 'MISSING REQUIRED FIELDS: Title, Slug, and Image URL are mandatory.' };
   }
 
-  // Construct Translations JSON object
-  // We assume the form sends flattened keys like 'translations.en.description'
+  // Construct Translations JSON object with locale-specific galleries
   const translations = {
     en: {
         description: formData.get('translations.en.description') as string,
         features: {
-            // Rough handling for features - maybe we limit to 4 or dynamic?
-            // let's grab a few standard ones
             "0": formData.get('translations.en.features.0') as string,
             "1": formData.get('translations.en.features.1') as string,
             "2": formData.get('translations.en.features.2') as string,
         },
-        privacy: formData.get('translations.en.privacy') as string
+        privacy: formData.get('translations.en.privacy') as string,
+        gallery: [
+            formData.get('translations.en.gallery.0') as string,
+            formData.get('translations.en.gallery.1') as string,
+            formData.get('translations.en.gallery.2') as string,
+            formData.get('translations.en.gallery.3') as string,
+        ].filter(url => url && url.length > 0)
     },
     ru: {
         description: formData.get('translations.ru.description') as string,
@@ -67,17 +70,18 @@ export async function saveGame(prevState: any, formData: FormData) {
             "1": formData.get('translations.ru.features.1') as string,
             "2": formData.get('translations.ru.features.2') as string,
         },
-        privacy: formData.get('translations.ru.privacy') as string
+        privacy: formData.get('translations.ru.privacy') as string,
+        gallery: [
+            formData.get('translations.ru.gallery.0') as string,
+            formData.get('translations.ru.gallery.1') as string,
+            formData.get('translations.ru.gallery.2') as string,
+            formData.get('translations.ru.gallery.3') as string,
+        ].filter(url => url && url.length > 0)
     }
   }
 
-  // Extract Gallery
-  const gallery = [
-      formData.get('gallery.0') as string,
-      formData.get('gallery.1') as string,
-      formData.get('gallery.2') as string,
-      formData.get('gallery.3') as string,
-  ].filter(url => url && url.length > 0); // Remove empty strings
+  // Legacy gallery field (kept null for backward compatibility)
+  const gallery = null;
 
   const dataToUpsert = {
     slug,

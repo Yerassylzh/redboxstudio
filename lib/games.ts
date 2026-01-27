@@ -19,12 +19,23 @@ export interface Game {
   privacy?: string;
 }
 
-// Helper to map DB row to App Game Interface
+/**
+ * Map database row to Game interface
+ * Extracts locale-specific data from translations JSONB
+ * Gallery fallback: locale-specific → English → cover image
+ */
 function mapGameData(row: any, locale: string): Game {
     const t = row.translations?.[locale] || row.translations?.['en'] || {};
     
     // Map features object "0", "1"... to array
     const features = t.features ? Object.values(t.features) as string[] : [];
+
+    // Get locale-specific gallery with fallback logic
+    const localizedGallery = t.gallery || [];
+    const fallbackGallery = row.translations?.['en']?.gallery || [];
+    const finalGallery = localizedGallery.length > 0 
+        ? localizedGallery 
+        : (fallbackGallery.length > 0 ? fallbackGallery : [row.image_url]);
 
     return {
         id: row.id,
@@ -37,8 +48,7 @@ function mapGameData(row: any, locale: string): Game {
         releaseDate: row.release_date,
         platforms: row.platforms || {},
         features: features,
-        // Use real gallery if available and not empty, otherwise fallback to cover image
-        gallery: (row.gallery && row.gallery.length > 0) ? row.gallery : [row.image_url], 
+        gallery: finalGallery,
         privacy: t.privacy
     };
 }
