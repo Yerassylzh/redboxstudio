@@ -21,6 +21,9 @@
     *   **Localization**:
         *   Tabbed Interface (English / Russian).
         *   Fields: Description, Privacy Policy, Key Features (1-3).
+    *   **App-Ads.txt**:
+        *   Textarea for app-ads.txt content.
+        *   Accessible at `/[locale]/game/[slug]/app-ads.txt`.
     *   **Feedback**: `NProgress` bar and inline error messages for validation.
 
 ## 3. Data Flow (Server Actions)

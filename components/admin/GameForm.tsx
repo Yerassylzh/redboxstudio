@@ -224,6 +224,27 @@ export function GameForm({ game }: { game?: any }) { // Type this better ideally
         </div>
       </div>
 
+      {/* App-Ads.txt Configuration */}
+      <div className="p-6 bg-white/5 border border-white/10 rounded-lg space-y-6">
+        <h2 className="text-xl font-heading text-primary border-b border-white/10 pb-4">App-Ads.txt Configuration</h2>
+        <p className="text-xs text-muted-foreground font-mono -mt-4">
+          * Configure app-ads.txt content for this game. This file will be accessible at /{game?.slug || 'game-slug'}/app-ads.txt
+        </p>
+        <div className="space-y-2">
+          <label className="text-xs uppercase font-mono text-muted-foreground">App-Ads.txt Content</label>
+          <textarea 
+            rows={8} 
+            name="app_ads_txt" 
+            defaultValue={game?.app_ads_txt || ''} 
+            className="w-full bg-black/20 border border-white/10 p-3 text-white font-mono text-xs"
+            placeholder="google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0&#10;subdomain.example.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0"
+          />
+          <p className="text-xs text-muted-foreground font-mono">
+            Format: domain, publisher_id, relationship, certification_authority_id
+          </p>
+        </div>
+      </div>
+
       <div className="flex gap-4 pt-4">
         <Button type="submit" variant="default" className="font-mono w-48" disabled={isPending}>
             {isPending ? 'SAVING...' : 'SAVE DATA'}

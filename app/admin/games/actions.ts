@@ -21,6 +21,7 @@ interface GameData {
     en: { description: string; features: Record<string, string>; privacy: string; gallery?: string[] }
     ru: { description: string; features: Record<string, string>; privacy: string; gallery?: string[] }
   }
+  app_ads_txt?: string
 }
 
 export async function saveGame(prevState: any, formData: FormData) {
@@ -83,6 +84,10 @@ export async function saveGame(prevState: any, formData: FormData) {
   // Legacy gallery field (kept null for backward compatibility)
   const gallery = null;
 
+  // Extract app-ads.txt content (trim and convert empty strings to null)
+  const app_ads_txt_raw = formData.get('app_ads_txt') as string;
+  const app_ads_txt = app_ads_txt_raw && app_ads_txt_raw.trim() !== '' ? app_ads_txt_raw.trim() : null;
+
   const dataToUpsert = {
     slug,
     title,
@@ -92,7 +97,8 @@ export async function saveGame(prevState: any, formData: FormData) {
     release_date: release_date || null,
     platforms,
     translations,
-    gallery
+    gallery,
+    app_ads_txt
   }
 
   let error;

@@ -11,6 +11,7 @@ create table public.games (
   release_date date null,
   category text null,
   gallery text[] null,
+  app_ads_txt text null,
   constraint games_pkey primary key (id),
   constraint games_slug_key unique (slug)
 ) tablespace pg_default;

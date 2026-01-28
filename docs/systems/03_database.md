@@ -19,11 +19,24 @@ The core table storing all game metadata.
     *   Structure: 
         ```json
         {
-          "en": { "description": "...", "privacy": "...", "features": { "0": "..." } },
-          "ru": { "description": "...", "privacy": "...", "features": { "0": "..." } }
+          "en": { 
+            "description": "...", 
+            "privacy": "...", 
+            "features": { "0": "..." },
+            "gallery": ["url1", "url2", ...]
+          },
+          "ru": { 
+            "description": "...", 
+            "privacy": "...", 
+            "features": { "0": "..." },
+            "gallery": ["url1", "url2", ...]
+          }
         }
         ```
-*   `gallery`: Text Array (`text[]`) - List of screenshot URLs.
+*   `gallery`: Text Array (`text[]`) - Legacy field, kept for backward compatibility.
+*   `app_ads_txt`: Text (Nullable) - App-ads.txt file content for advertising platform verification.
+    *   Accessible at: `/[locale]/game/[slug]/app-ads.txt`
+    *   Format: Standard app-ads.txt format (domain, publisher_id, relationship, certification_authority_id)
 
 ### `analytics`
 Stores raw event logs for user interactions.
